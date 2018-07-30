@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="IntroViewController" customModule="ObtainingResults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="amv-TM-yyS" kind="custom" identifier="toConsent" customClass="IntroSegue" customModule="ObtainingResults" customModuleProvider="target" id="KBW-MG-AmJ"/>
+                        <segue destination="kzu-fe-xof" kind="custom" identifier="toTasks" customClass="IntroSegue" customModule="ObtainingResults" customModuleProvider="target" id="uaC-GA-6sy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="90"/>
+        </scene>
+        <!--Consent View Controller-->
+        <scene sceneID="Hd4-q8-Jak">
+            <objects>
+                <viewController id="amv-TM-yyS" customClass="ConsentViewController" customModule="ObtainingResults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xN4-RD-WDq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbo-NR-qGO">
+                                <rect key="frame" x="142.5" y="513" width="90" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Join Study"/>
+                                <connections>
+                                    <action selector="joinButtonTapped:" destination="amv-TM-yyS" eventType="touchUpInside" id="MAP-bk-p8E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dsR-H2-8io" firstAttribute="bottom" secondItem="Lbo-NR-qGO" secondAttribute="bottom" constant="120" id="1In-Ao-TYF"/>
+                            <constraint firstItem="Lbo-NR-qGO" firstAttribute="centerX" secondItem="xN4-RD-WDq" secondAttribute="centerX" id="ojX-Ha-VZC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dsR-H2-8io"/>
+                    </view>
+                    <connections>
+                        <segue destination="eix-UX-vrn" kind="unwind" identifier="unwindToTasks" unwindAction="unwindToTasks:" id="wAr-WD-vTA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lc-WP-1hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eix-UX-vrn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="-321.58920539730138"/>
+        </scene>
+        <!--Tasks View Controller-->
+        <scene sceneID="OeK-5t-fEa">
+            <objects>
+                <viewController id="kzu-fe-xof" customClass="TasksViewController" customModule="ObtainingResults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LFX-oP-wrT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-fT-QWJ">
+                                <rect key="frame" x="135" y="513" width="104" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Leave Study">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinButtonTapped:" destination="amv-TM-yyS" eventType="touchUpInside" id="XO1-Yi-HaL"/>
+                                    <action selector="leaveButtonTapped:" destination="kzu-fe-xof" eventType="touchUpInside" id="e0E-l4-00C"/>
+                                    <segue destination="amv-TM-yyS" kind="show" identifier="returnToConsent" id="oFs-uU-e5A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvS-Cp-plf">
+                                <rect key="frame" x="105.5" y="100" width="163" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Consent Document"/>
+                                <connections>
+                                    <action selector="consentButtonTapped:" destination="kzu-fe-xof" eventType="touchUpInside" id="rhd-Xd-PYx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC9-30-X7j">
+                                <rect key="frame" x="120" y="214" width="134" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Heart Rate Task"/>
+                                <connections>
+                                    <action selector="heartRateButtonTapped:" destination="kzu-fe-xof" eventType="touchUpInside" id="xFM-1a-lrP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hws-l2-ebL">
+                                <rect key="frame" x="156" y="316" width="63" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Results"/>
+                                <connections>
+                                    <segue destination="Tih-sy-ucJ" kind="show" identifier="toResults" id="BcT-zT-0ez"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aC9-30-X7j" firstAttribute="centerX" secondItem="LFX-oP-wrT" secondAttribute="centerX" id="9MJ-4B-e5P"/>
+                            <constraint firstItem="V3c-VX-2Xj" firstAttribute="bottom" secondItem="Gc3-fT-QWJ" secondAttribute="bottom" constant="120" id="Arg-gw-MY6"/>
+                            <constraint firstItem="hws-l2-ebL" firstAttribute="centerY" secondItem="LFX-oP-wrT" secondAttribute="centerY" id="J2T-WW-trQ"/>
+                            <constraint firstItem="aC9-30-X7j" firstAttribute="top" secondItem="KvS-Cp-plf" secondAttribute="bottom" constant="80" id="SpO-IE-QVA"/>
+                            <constraint firstItem="hws-l2-ebL" firstAttribute="centerX" secondItem="LFX-oP-wrT" secondAttribute="centerX" id="Yxc-ch-B3P"/>
+                            <constraint firstItem="Gc3-fT-QWJ" firstAttribute="centerX" secondItem="LFX-oP-wrT" secondAttribute="centerX" id="h1t-cx-Pkk"/>
+                            <constraint firstItem="KvS-Cp-plf" firstAttribute="centerX" secondItem="LFX-oP-wrT" secondAttribute="centerX" id="h5F-uW-VUC"/>
+                            <constraint firstItem="KvS-Cp-plf" firstAttribute="top" secondItem="V3c-VX-2Xj" secondAttribute="top" constant="80" id="qqu-ld-7Xy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V3c-VX-2Xj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOt-gY-ukM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="512.29385307346331"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="Bae-ag-ku6">
+            <objects>
+                <viewController id="Tih-sy-ucJ" customClass="ResultsViewController" customModule="ObtainingResults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGo-Ud-8vy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNU-7S-A0F">
+                                <rect key="frame" x="166" y="573" width="42" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EUq-yw-A8Y" kind="unwind" unwindAction="unwindToTasks:" id="pKe-fc-0N5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW0-h1-PAy">
+                                <rect key="frame" x="154" y="489" width="66" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="Tih-sy-ucJ" eventType="touchUpInside" id="wgY-JP-NYA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CG1-Uu-U5k" customClass="ORKLineGraphChartView">
+                                <rect key="frame" x="16" y="40" width="343" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="N8g-WD-tAz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rW0-h1-PAy" firstAttribute="centerX" secondItem="xGo-Ud-8vy" secondAttribute="centerX" id="29F-kc-bLZ"/>
+                            <constraint firstItem="zNU-7S-A0F" firstAttribute="centerX" secondItem="xGo-Ud-8vy" secondAttribute="centerX" id="SWd-1w-cUs"/>
+                            <constraint firstItem="CG1-Uu-U5k" firstAttribute="centerX" secondItem="xGo-Ud-8vy" secondAttribute="centerX" id="apW-bK-brm"/>
+                            <constraint firstItem="9rH-ta-Ken" firstAttribute="bottom" secondItem="zNU-7S-A0F" secondAttribute="bottom" constant="60" id="bBK-T6-eQ7"/>
+                            <constraint firstItem="CG1-Uu-U5k" firstAttribute="leading" secondItem="9rH-ta-Ken" secondAttribute="leading" constant="16" id="cGd-Dc-IpS"/>
+                            <constraint firstItem="CG1-Uu-U5k" firstAttribute="top" secondItem="9rH-ta-Ken" secondAttribute="top" constant="20" id="ijF-KR-dqn"/>
+                            <constraint firstItem="9rH-ta-Ken" firstAttribute="trailing" secondItem="CG1-Uu-U5k" secondAttribute="trailing" constant="16" id="nrZ-1a-ozo"/>
+                            <constraint firstItem="zNU-7S-A0F" firstAttribute="top" secondItem="rW0-h1-PAy" secondAttribute="bottom" constant="50" id="v5o-R8-g9x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9rH-ta-Ken"/>
+                    </view>
+                    <connections>
+                        <outlet property="graphChartView" destination="CG1-Uu-U5k" id="Fu6-Ng-v6o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdV-mB-7pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EUq-yw-A8Y" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1789.5999999999999" y="511.39430284857576"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oFs-uU-e5A"/>
+    </inferredMetricsTieBreakers>
+</document>
