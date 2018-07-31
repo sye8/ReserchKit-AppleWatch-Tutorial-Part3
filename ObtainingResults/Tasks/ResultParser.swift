@@ -69,7 +69,7 @@ struct ResultParser{
                 let data = try JSONSerialization.data(withJSONObject: toSend, options: JSONSerialization.WritingOptions.prettyPrinted)
                 request.httpBody = data
                 let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-                    if error != nil{
+                    if let error = error{
                         print(error)
                         return
                     }
